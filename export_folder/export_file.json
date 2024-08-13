@@ -1,0 +1,26 @@
+[
+    {
+        "os_at_release": "Android 13  (One UI 5.1)"
+    },
+    {
+        "screen_size": "6.4\""
+    },
+    {
+        "screen_res": "1080x2340"
+    },
+    {
+        "ram": "8 รม"
+    },
+    {
+        "internal_mem": "256 รม"
+    },
+    {
+        "platform": "Samsung Exynos"
+    },
+    {
+        "processor": "Exynos 1380"
+    },
+    {
+        "cpu_arch": "ARM Cortex-A78 2400 ฬร๖ + Cortex-A55 2000 ฬร๖"
+    }
+]

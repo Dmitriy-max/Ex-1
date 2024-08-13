@@ -15,7 +15,6 @@ from selenium import webdriver      # Импортируем webdriver из би
 #from selenium.webdriver.common.action_chains import ActionChains    # Импортируем ActionChains для выполнения цепочки действий
 # ----------------------------------------------------------------------------
 
-# имитирую передачу параметров
 
 # проверим передались ли параметры
 if len(sys.argv)<=1:
@@ -90,6 +89,12 @@ try:
         print("Пожалуйста, уточните критерии поиска и пперезапустите крипт с новыми параметрами")
         driver.quit()
         exit()
+    if len(count_model_found) == 0:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("Ммодели, соответствующих заданным  поиска, не найдено.")
+        print("Пожалуйста, уточните критерии поиска и пперезапустите крипт с новыми параметрами")
+        driver.quit()
+        exit()
 
     # Перешли по ссылке найденного телефона
     driver.find_element('xpath', '(//div[@class="product__details"])').click()
@@ -127,10 +132,10 @@ try:
     if not os.path.isdir("export_folder"):
         os.mkdir("export_folder")
 
-    with open(os.getcwd() + "\\export_folder\\export_file.json", "w") as file:
+    with open(os.getcwd() + "\\export_file.json", "w") as file:
         json.dump(export_list, file, indent=4, ensure_ascii=False)
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("Результат работы в файле: ", os.getcwd() + "\\export_folder\\export_file.json")
+        print("Результат работы в файле: ", os.getcwd() + "\\export_file.json")
 # В случае ошибок, чтобы браузер обязательно закрылся
 finally:
     driver.quit()
